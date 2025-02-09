@@ -16,8 +16,8 @@ This is a simple Flask web application that allows users to upload a DOCX templa
 1. Clone this repository and navigate to the directory:
 
 ```bash
-git clone https://github.com/your-repo/docx-form-filler.git
-cd docx-form-filler
+git clone https://github.com/gizembrasser/reporting-template.git
+cd reporting-template
 ```
 
 2. Set up a Python environment:
