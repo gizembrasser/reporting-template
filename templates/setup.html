@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document setup</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='opmaak.css') }}">
+</head>
+
+<body>
+    <h1>Set up your document</h1>
+    <form method="POST" enctype="multipart/form-data">
+        <label for="template_filename">Upload template file:</label>
+        <input type="file" name="template_filename" required>
+
+        <label for="doc_filename">Name of the output document:</label>
+        <input type="text" id="doc_filename" name="doc_filename" placeholder="e.g., filled_report.docx" required>
+
+        <button type="submit">Proceed to form</button>
+    </form>
+</body>
+
+</html>

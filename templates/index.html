@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reporting template form</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='opmaak.css') }}">
+</head>
+
+<body>
+    <h1>Reporting template form</h1>
+    <form method="POST" enctype="multipart/form-data">
+        {% for placeholder in placeholders %}
+        <div>
+            <label for="{{ placeholder }}">{{ placeholder }}</label>
+            {% if 'date/time' in placeholder|lower %}
+            <!-- Date input for placeholders containing the word 'date' -->
+            <input type="date" id="{{ placeholder }}" name="{{ placeholder }}">
+            {% else %}
+            <!-- Textarea for other placeholders -->
+            <textarea id="{{ placeholder }}" name="{{ placeholder }}"></textarea>
+            {% endif %}
+        </div>
+        {% endfor %}
+
+        <!-- File upload section -->
+        <h2>Upload supporting files</h2>
+        <input type="file" name="uploaded_files" multiple>
+        <br><br>
+
+        <button type="submit">Generate document</button>
+    </form>
+</body>
+
+</html>
